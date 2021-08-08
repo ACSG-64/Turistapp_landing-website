@@ -22,7 +22,7 @@ html, body {
 #main_section {
     --fontSize: 1.2rem;
 
-    height: calc(100% - var(--navHeight));
+    min-height: calc(100% - var(--navHeight));
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
@@ -108,16 +108,16 @@ html, body {
 
 @keyframes placesSlideShow {
     0% {
-        background-image: url(media/places/washington_monument_US.jpg)
+        background-image: url('media/places/washington_monument_US.jpg')
     }
     33% {
-        background-image: url(media/places/brandenburg_gate_DE.jpg)
+        background-image: url('media/places/brandenburg_gate_DE.jpg')
     }
     66% {
-        background-image: url(media/places/monserrate_church_CO.jpg)
+        background-image: url('media/places/monserrate_church_CO.jpg')
     }
     100% {
-        background-image: url(media/places/washington_monument_US.jpg)
+        background-image: url('media/places/washington_monument_US.jpg')
     }
 }
 
@@ -170,7 +170,7 @@ html, body {
 #features {
     min-height: 100%;
     background-color: rgb(246, 251, 255);
-    background-image: url(media/waves_background.png);
+    background-image: url('media/waves_background.png');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -195,7 +195,7 @@ html, body {
 
 #features_grid #features_phone_img {
     height: 90%;
-    background-image: url(media/app/desktop/list_screen.png);
+    background-image: url('media/app/desktop/list_screen.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -327,22 +327,22 @@ footer {
     #features_grid #features_phone_img {
         height: 75vh;
         width: 100%;
-        background-image: url(media/app/mobile/list_screen.png);
+        background-image: url('media/app/mobile/list_screen.png');
         animation: appSlideShow 10s infinite;
     }
 
     @keyframes appSlideShow {
         0% {
-            background-image: url(media/app/mobile/list_screen.png)
+            background-image: url('media/app/mobile/list_screen.png')
         }
         33% {
-            background-image: url(media/app/mobile/map_screen.png)
+            background-image: url('media/app/mobile/map_screen.png')
         }
         66% {
-            background-image: url(media/app/mobile/details_screen.png)
+            background-image: url('media/app/mobile/details_screen.png')
         }
         100% {
-            background-image: url(media/app/mobile/list_screen.png)
+            background-image: url('media/app/mobile/list_screen.png')
         }
     }
 
