@@ -9,9 +9,14 @@
     padding: 0;
 }
 
+.turistapp {
+    font-weight: bold;
+    font-style: italic;
+}
+
 html, body {
     height: 100%;
-    font-family: "Open Sans", serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 #main_section {
@@ -103,16 +108,16 @@ html, body {
 
 @keyframes placesSlideShow {
     0% {
-        background-image: url(media/places/washington_monument.jpg)
+        background-image: url(media/places/washington_monument_US.jpg)
     }
     33% {
-        background-image: url(media/places/brandenburg_gate.jpg)
+        background-image: url(media/places/brandenburg_gate_DE.jpg)
     }
     66% {
-        background-image: url(media/places/monserrate_church.jpg)
+        background-image: url(media/places/monserrate_church_CO.jpg)
     }
     100% {
-        background-image: url(media/places/washington_monument.jpg)
+        background-image: url(media/places/washington_monument_US.jpg)
     }
 }
 
@@ -132,12 +137,28 @@ html, body {
     padding: 25px;
 }
 
+#description div h1 {
+    margin-bottom: 10px;
+}
+
+#description div p{
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 1.15rem;
+}
+
+#description div p:not(:last-of-type){
+    margin-bottom: 10px;
+}
+
 #description div iframe {
     --videoWidth: 40vw;
     width: var(--videoWidth);
     height: calc(var(--videoWidth) / 1.77);
     box-shadow: -10px 10px 5px 0 rgba(0, 0, 0, 0.75);
-    transition: 0.02s;
+
+    border-radius: 15px;
+    border-style: none;
 }
 
 #description div h1 {
@@ -174,8 +195,7 @@ html, body {
 
 #features_grid #features_phone_img {
     height: 90%;
-    display: flex;
-    background-image: url(media/app/list_screen.png);
+    background-image: url(media/app/desktop/list_screen.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -241,4 +261,105 @@ footer {
     color: white;
     background-color: var(--blackAccent);
     line-height: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #main_section, #description, #features_grid {
+        display: block;
+        padding: 7.5%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    #main_section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #main_section > div:first-of-type h1 {
+        text-align: start;
+    }
+
+
+    #main_section > div:first-of-type {
+        padding: 0;
+        margin: 0;
+    }
+
+    #main_section > div:first-of-type ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #main_section > div:first-of-type ul li {
+        float: none;
+    }
+
+    #main_section > div:first-of-type ul li:not(:first-of-type) {
+        margin: 15px 0 0;
+    }
+
+    #main_section > div:last-of-type {
+        display: none;
+        animation-name: none;
+    }
+
+    #description {
+        margin: 0;
+    }
+
+    #description div {
+        padding: 10px 0;
+    }
+
+    #description div > iframe {
+        --videoWidth: 85vw;
+        width: var(--videoWidth);
+        height: calc(var(--videoWidth) / 1.77);
+        border-radius: 0;
+    }
+
+    #features_grid #features_phone_img {
+        height: 75vh;
+        width: 100%;
+        background-image: url(media/app/mobile/list_screen.png);
+        animation: appSlideShow 10s infinite;
+    }
+
+    @keyframes appSlideShow {
+        0% {
+            background-image: url(media/app/mobile/list_screen.png)
+        }
+        33% {
+            background-image: url(media/app/mobile/map_screen.png)
+        }
+        66% {
+            background-image: url(media/app/mobile/details_screen.png)
+        }
+        100% {
+            background-image: url(media/app/mobile/list_screen.png)
+        }
+    }
+
+    #features_grid > div:last-of-type {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #features_grid > div:last-of-type div {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #download_app {
+        flex-direction: column;
+    }
+
 }

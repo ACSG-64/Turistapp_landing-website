@@ -80,7 +80,7 @@ nav ul li:last-of-type {
 nav ul li:last-of-type:hover {
     color: black;
     font-weight: bold;
-    background-color: white;;
+    background-color: white;
 }
 
 nav ul li a {
@@ -88,4 +88,24 @@ nav ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+    nav ul li:not(:last-of-type){
+        display: none;
+    }
+
+    nav ul li:last-of-type {
+        height: 100%;
+
+        color: black;
+        background-color: white;
+
+        border-color: white;
+        border-bottom-color: black;
+        border-left-width: 2px;
+        border-bottom-style: solid;
+
+        transition: border-bottom-color 0.2s;
+    }
 }
